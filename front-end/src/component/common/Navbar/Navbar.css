@@ -50,7 +50,7 @@
 .nav-button.active-nav-button {
   color: rgb(0, 0, 0) !important;
   background-color: transparent !important;
-  transform: scale(1.1);  border-bottom: 2px solid #000000; 
+  transform: scale(1.1);  border-bottom: 2px solid #000000;
 }
 /* Logo styles */
 .logo {
@@ -82,7 +82,7 @@
   color: rgb(0, 0, 0) !important;
 }
 
-
+/* icon */
 .icon-button {
   color: rgb(0, 0, 0) !important;
 }

@@ -59,7 +59,7 @@ const Carousel = () => {
         About Our Shoes
       </h2>
       <div className="max-w-5xl mx-auto">
-        <Slider {...settings}>
+        <Slider {...settings}>  
           {testimonials.map((testimonial, index) => (
             <div key={index} className="p-4">
               <div className="bg-white p-8 rounded-lg shadow-lg">

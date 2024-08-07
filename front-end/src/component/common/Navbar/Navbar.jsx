@@ -22,7 +22,7 @@ import './Navbar.css';
 
 const pages = [
   { name: 'HOME', path: '/' },
-  { name: 'MEN', path: '/men' },
+  { name: 'MEN', path: '/mens' },
   { name: 'WOMEN', path: '/women' },
   { name: 'KIDS', path: '/kids' },
   { name: 'ABOUT', path: '/about' },

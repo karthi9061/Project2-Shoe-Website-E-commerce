@@ -1,5 +1,5 @@
 import React from "react";
-
+import{Link} from 'react-router-dom'
 const ProductCategories = () => {
   return (
     <div className="p-8 bg-purple-300">
@@ -18,9 +18,11 @@ const ProductCategories = () => {
             Discover the latest trends in men's footwear, crafted with premium
             materials and designed for unparalleled comfort and style.
           </p>
+          <Link to='mens'>
           <button className="mt-6 bg-orange-500 text-white px-6 py-3 rounded-full">
             FIND PRODUCTS →
           </button>
+        </Link>
         </div>
 
         {/* women */}
