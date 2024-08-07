@@ -93,7 +93,7 @@ export const MenShoes = [
     image: p5,
     description: 'Insulated boots to keep your feet warm in winter.',
     colors: ['Brown', 'Black'],
-    sizes: ['9', '10', '11', '12']
+    sizes: ['9', '7', '8', '11']
   }
 ];
 export const KidsShoes = [
@@ -104,7 +104,7 @@ export const KidsShoes = [
     image: p1,
     description: 'Comfortable and durable running shoes for kids.',
     colors: ['Pink', 'Blue', 'Green'],
-    sizes: ['12', '13', '1', '2']
+    sizes: ['8', '7', '11', '9']
   },
   {
     id: 12,
@@ -113,7 +113,7 @@ export const KidsShoes = [
     image: p2,
     description: 'Supportive basketball shoes designed for young athletes.',
     colors: ['Black', 'Red', 'White'],
-    sizes: ['13', '1', '2', '3']
+    sizes: ['11', '10', '8', '9']
   },
   {
     id: 13,

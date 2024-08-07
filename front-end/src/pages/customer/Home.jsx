@@ -1,20 +1,31 @@
-import React from 'react';
-import Hero from '../../component/customer/Hero/Hero';
-import FeaturedProduct from '../../component/customer/FeaturedProduct/FeaturedProduct';
-import ProductCategories from '../../component/customer/ProductCategories/ProductCategories';
-import PromoSection from '../../component/customer/Login-signup/PromoSection';
-import Carousel from '../../component/customer/Ourproduct/Carousel';
+import React, { Suspense, lazy } from 'react';
+
+const Hero = lazy(() => import('../../component/customer/Hero/Hero'));
+const FeaturedProduct = lazy(() => import('../../component/customer/FeaturedProduct/FeaturedProduct'));
+const ProductCategories = lazy(() => import('../../component/customer/ProductCategories/ProductCategories'));
+const PromoSection = lazy(() => import('../../component/customer/Login-signup/PromoSection'));
+const Carousel = lazy(() => import('../../component/customer/Ourproduct/Carousel'));
 
 const Home = () => {
   return (
     <div className="bg-home-bg bg-cover bg-center bg-fixed min-h-screen">
-      <Hero />
+      <Suspense fallback={<div>Loading...</div>}>
+        <Hero />
+      </Suspense>
       <div className="mt-4">
-        <PromoSection />
+        <Suspense fallback={<div>Loading...</div>}>
+          <PromoSection />
+        </Suspense>
       </div>
-      <FeaturedProduct />
-      <ProductCategories />
-      <Carousel />
+      <Suspense fallback={<div>Loading...</div>}>
+        <FeaturedProduct />
+      </Suspense>
+      <Suspense fallback={<div>Loading...</div>}>
+        <ProductCategories />
+      </Suspense>
+      <Suspense fallback={<div>Loading...</div>}>
+        <Carousel />
+      </Suspense>
     </div>
   );
 };

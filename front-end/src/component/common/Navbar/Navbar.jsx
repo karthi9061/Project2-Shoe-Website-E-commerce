@@ -1,4 +1,5 @@
 import React from 'react';
+import { useState } from 'react';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
@@ -69,7 +70,8 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 }));
 
 function Navbar() {
-  const [anchorElNav, setAnchorElNav] = React.useState(null);
+  const [anchorElNav, setAnchorElNav] = useState(null);
+  const [anchorElProfile, setAnchorElProfile] = useState(null);
   const location = useLocation(); // Get the current route
 
   const handleOpenNavMenu = (event) => {
@@ -78,6 +80,14 @@ function Navbar() {
 
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
+  };
+
+  const handleOpenProfileMenu = (event) => {
+    setAnchorElProfile(event.currentTarget);
+  };
+
+  const handleCloseProfileMenu = () => {
+    setAnchorElProfile(null);
   };
 
   return (
@@ -189,9 +199,38 @@ function Navbar() {
             >
               <ShoppingBagIcon />
             </IconButton>
-            <IconButton color="inherit" className="icon-button">
+            <IconButton
+              color="inherit"
+              onClick={handleOpenProfileMenu}
+              className="icon-button"
+            >
               <AccountCircleIcon />
             </IconButton>
+            <Menu
+              anchorEl={anchorElProfile}
+              open={Boolean(anchorElProfile)}
+              onClose={handleCloseProfileMenu}
+              anchorOrigin={{
+                vertical: 'top',
+                horizontal: 'right',
+              }}
+              transformOrigin={{
+                vertical: 'top',
+                horizontal: 'right',
+              }}
+              className="profile-menu"
+            >
+              <MenuItem onClick={handleCloseProfileMenu}>
+                <Link to="/account" className="profile-menu-item">
+                  Account
+                </Link>
+              </MenuItem>
+              <MenuItem onClick={handleCloseProfileMenu}>
+                <Link to="/login" className="profile-menu-item">
+                  Login
+                </Link>
+              </MenuItem>
+            </Menu>
           </Box>
         </Toolbar>
       </Container>

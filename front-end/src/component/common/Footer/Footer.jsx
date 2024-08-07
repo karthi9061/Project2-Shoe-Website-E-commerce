@@ -8,7 +8,7 @@ const Footer = () => {
         <div>
           <div className="flex items-center space-x-2">
             <img src={logo} alt="Logo" className="h-6 sm:h-8 md:h-10" />
-            <span className="text-xl sm:text-2xl md:text-3xl font-Freckle">WolfWalk</span>
+            <span className="text-xl sm:text-2xl md:text-3xl font-freckle">WolfWalk</span>
           </div>
           <p className="mt-2 sm:mt-4 text-sm sm:text-base">
             1245, Church Street<br />
