@@ -11,6 +11,8 @@ import { CartProvider, FavoritesProvider } from './CartProvider'; // Import both
 import ViewPage from './pages/customer/ViewPage';
 import Women from './pages/customer/Women';
 import Kids from './pages/customer/Kids';
+import Contact from './pages/common/Contact';
+import About from './pages/common/About';
 
 
 const App = () => {
@@ -37,6 +39,8 @@ const App = () => {
               <Route exact path="mens" element={<Mens />} />
               <Route exact path="women" element={<Women />} />
               <Route exact path="kids" element={<Kids />} />
+              <Route exact path="contact" element={<Contact />} />
+              <Route exact path="about" element={<About />} />
               <Route exact path="cart" element={<CartPage />} />
               <Route exact path="favorites" element={<FavoritesPage />} />
               <Route exact path="/shoe/:id" element={<ViewPage />} />

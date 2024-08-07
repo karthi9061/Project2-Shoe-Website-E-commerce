@@ -7,7 +7,8 @@ module.exports = {
       fontFamily: {
         ceviche: ['Ceviche One', 'system-ui'],
         freckle: ['Freckle Face', 'system-ui'],
-        zilla: ['Zilla Slab Highlight', 'serif'],
+        zilla:   ['Zilla Slab Highlight', 'serif'],
+        Caveat:  ['Caveat', 'curs'] ,
       },
       backgroundImage: {
         'mens-category': "url('/src/assets/images/men1.jpg')",
