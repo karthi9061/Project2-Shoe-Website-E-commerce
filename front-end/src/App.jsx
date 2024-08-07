@@ -3,37 +3,49 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './component/common/Navbar/Navbar';
 import Footer from './component/common/Footer/Footer';
 import Loader from './component/common/Loader/Loader';
-import Mens from './pages/customer/Mens';
 import Home from './pages/customer/Home';
+import Mens from './pages/customer/Mens';
+import CartPage from './pages/customer/CartPage';
+import FavoritesPage from './pages/customer/FavoritesPage';
+import { CartProvider, FavoritesProvider } from './CartProvider'; // Import both providers
+import ViewPage from './pages/customer/ViewPage';
+import Women from './pages/customer/Women';
+import Kids from './pages/customer/Kids';
+
 
 const App = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 2000); 
+    }, 2000);
 
-    return () => clearTimeout(timer); 
+    return () => clearTimeout(timer);
   }, []);
 
   return (
-    <div>
-      {loading ? (
-        <Loader />
-      ) : (
-
-        <Router>
-          <Navbar />
-          <Routes>
-            <Route exact path="/" element={<Home />} />
-            <Route exact path="mens" element={<Mens />} />
-          </Routes>
-          <Footer />
-        </Router>
-      )}
-    </div>
+    <CartProvider>
+      <FavoritesProvider>
+        {loading ? (
+          <Loader />
+        ) : (
+          <Router>
+            <Navbar />
+            <Routes>
+              <Route exact path="/" element={<Home />} />
+              <Route exact path="mens" element={<Mens />} />
+              <Route exact path="women" element={<Women />} />
+              <Route exact path="kids" element={<Kids />} />
+              <Route exact path="cart" element={<CartPage />} />
+              <Route exact path="favorites" element={<FavoritesPage />} />
+              <Route exact path="/shoe/:id" element={<ViewPage />} />
+            </Routes>
+            <Footer />
+          </Router>
+        )}
+      </FavoritesProvider>
+    </CartProvider>
   );
 };
 

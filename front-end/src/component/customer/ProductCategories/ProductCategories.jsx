@@ -38,9 +38,11 @@ const ProductCategories = () => {
               Each pair is meticulously crafted to provide both style and
               comfort.
             </p>
+            <Link to='women'>
             <button className="mt-6 bg-orange-500 text-white px-6 py-3 rounded-full">
               FIND PRODUCTS →
             </button>
+            </Link>
           </div>
         </div>
 
@@ -56,9 +58,11 @@ const ProductCategories = () => {
             children's shoes of 2024. Designed to withstand all-day play and
             adventure.
           </p>
+          <Link  to='kids'>
           <button className="mt-6 bg-orange-500 text-white px-6 py-3 rounded-full">
             FIND PRODUCTS →
           </button>
+          </Link>
         </div>
       </div>
     </div>

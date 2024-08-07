@@ -1,9 +1,9 @@
 import React, { useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { useCart, useFavorites } from '../../CartProvider';
-import './MenShoePage.css'; // Ensure the path is correct
 
-const MenShoesPage = ({ shoes, loadMoreShoes }) => {
+
+const WomenShoesPage = ({ shoes, loadMoreShoes }) => {
   const [loading, setLoading] = useState(false);
   const [feedback, setFeedback] = useState(null);
   const [clickedShoe, setClickedShoe] = useState(null);
@@ -125,4 +125,4 @@ const MenShoesPage = ({ shoes, loadMoreShoes }) => {
   );
 };
 
-export default MenShoesPage;
+export default WomenShoesPage;

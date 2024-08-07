@@ -17,7 +17,7 @@ import InputBase from '@mui/material/InputBase';
 import { alpha, styled } from '@mui/material/styles';
 import Grid from '@mui/material/Grid';
 import logo from '../../../assets/Logo/WolfPaw.png';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import './Navbar.css';
 
 const pages = [
@@ -70,7 +70,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 
 function Navbar() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
-  const [activePage, setActivePage] = React.useState('/');
+  const location = useLocation(); // Get the current route
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
@@ -78,11 +78,6 @@ function Navbar() {
 
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
-  };
-
-  const handlePageClick = (path) => {
-    setActivePage(path);
-    handleCloseNavMenu();
   };
 
   return (
@@ -120,11 +115,10 @@ function Navbar() {
               }}
             >
               {pages.map((page) => (
-                <MenuItem key={page.name} onClick={() => handlePageClick(page.path)} className="menu-item">
+                <MenuItem key={page.name} onClick={handleCloseNavMenu}>
                   <Link
                     to={page.path}
-                    className={`nav-link ${activePage === page.path ? 'active-link' : ''}`}
-                    onClick={() => handlePageClick(page.path)}
+                    className={`nav-link ${location.pathname === page.path ? 'active-link' : ''}`}
                   >
                     <Typography textAlign="center">{page.name}</Typography>
                   </Link>
@@ -139,8 +133,7 @@ function Navbar() {
                 key={page.name}
                 component={Link}
                 to={page.path}
-                className={`nav-button ${activePage === page.path ? 'active-nav-button' : ''}`}
-                onClick={() => handlePageClick(page.path)}
+                className={`nav-button ${location.pathname === page.path ? 'active-nav-button' : ''}`}
               >
                 {page.name}
               </Button>
@@ -180,14 +173,24 @@ function Navbar() {
           </Search>
 
           <Box sx={{ display: 'flex', alignItems: 'center', ml: 2 }}>
-            <IconButton color="inherit" className="icon-button">
-              <AccountCircleIcon />
-            </IconButton>
-            <IconButton color="inherit" className="icon-button">
+            <IconButton
+              color="inherit"
+              component={Link}
+              to="/favorites" 
+              className="icon-button"
+            >
               <FavoriteIcon />
             </IconButton>
-            <IconButton color="inherit" className="icon-button">
+            <IconButton
+              color="inherit"
+              component={Link}
+              to="/cart" 
+              className="icon-button"
+            >
               <ShoppingBagIcon />
+            </IconButton>
+            <IconButton color="inherit" className="icon-button">
+              <AccountCircleIcon />
             </IconButton>
           </Box>
         </Toolbar>

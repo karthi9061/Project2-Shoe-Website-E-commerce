@@ -96,3 +96,97 @@ export const MenShoes = [
     sizes: ['9', '10', '11', '12']
   }
 ];
+export const KidsShoes = [
+  {
+    id: 11,
+    name: 'Kids Running Shoes',
+    price: 60,
+    image: p1,
+    description: 'Comfortable and durable running shoes for kids.',
+    colors: ['Pink', 'Blue', 'Green'],
+    sizes: ['12', '13', '1', '2']
+  },
+  {
+    id: 12,
+    name: 'Kids Basketball Shoes',
+    price: 80,
+    image: p2,
+    description: 'Supportive basketball shoes designed for young athletes.',
+    colors: ['Black', 'Red', 'White'],
+    sizes: ['13', '1', '2', '3']
+  },
+  {
+    id: 13,
+    name: 'Kids Casual Sneakers',
+    price: 50,
+    image: p3,
+    description: 'Stylish and comfortable sneakers for everyday wear.',
+    colors: ['Yellow', 'Gray', 'Navy'],
+    sizes: ['12', '13', '1', '2']
+  },
+  {
+    id: 14,
+    name: 'Kids Slip-On Shoes',
+    price: 45,
+    image: p4,
+    description: 'Easy-to-wear slip-on shoes for quick outings.',
+    colors: ['Purple', 'Orange', 'Black'],
+    sizes: ['11', '12', '13', '1']
+  },
+  {
+    id: 15,
+    name: 'Kids Winter Boots',
+    price: 100,
+    image: p5,
+    description: 'Insulated boots to keep kids warm during winter.',
+    colors: ['Brown', 'Blue', 'Gray'],
+    sizes: ['12', '13', '1', '2']
+  }
+];
+export const WomenShoes = [
+  {
+    id: 16,
+    name: 'Women Running Shoes',
+    price: 130,
+    image: p1,
+    description: 'High-performance running shoes for women.',
+    colors: ['Pink', 'Gray', 'Black'],
+    sizes: ['6', '7', '8', '9']
+  },
+  {
+    id: 17,
+    name: 'Women Dress Shoes',
+    price: 150,
+    image: p2,
+    description: 'Elegant dress shoes for formal occasions.',
+    colors: ['Black', 'Beige', 'Red'],
+    sizes: ['6', '7', '8', '9']
+  },
+  {
+    id: 18,
+    name: 'Women Sandals',
+    price: 70,
+    image: p3,
+    description: 'Stylish and comfortable sandals for summer.',
+    colors: ['Brown', 'White', 'Blue'],
+    sizes: ['6', '7', '8', '9']
+  },
+  {
+    id: 19,
+    name: 'Women Ankle Boots',
+    price: 120,
+    image: p4,
+    description: 'Chic ankle boots perfect for the fall season.',
+    colors: ['Black', 'Gray', 'Brown'],
+    sizes: ['6', '7', '8', '9']
+  },
+  {
+    id: 20,
+    name: 'Women Loafers',
+    price: 90,
+    image: p5,
+    description: 'Comfortable loafers for casual and professional wear.',
+    colors: ['Navy', 'Gray', 'Beige'],
+    sizes: ['6', '7', '8', '9']
+  }
+];
