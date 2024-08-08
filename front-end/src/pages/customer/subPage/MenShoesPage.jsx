@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
-import { useCart, useFavorites } from '../../CartProvider';
+import { useCart, useFavorites } from '../../../CartProvider';
 import './MenShoePage.css'; // Ensure the path is correct
 
 const MenShoesPage = ({ shoes, loadMoreShoes }) => {

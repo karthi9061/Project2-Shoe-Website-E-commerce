@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { MenShoes } from "../../Data/MenData";
-import { useCart } from '../../CartProvider'; 
+import { KidsShoes } from "../../../Data/MenData";
+import { useCart } from '../../../CartProvider'; 
 
-const ViewPage = () => {
+const KidviewPage = () => {
   const { id } = useParams();
-  const shoe = MenShoes.find((item) => item.id === parseInt(id));
+  const shoe = KidsShoes.find((item) => item.id === parseInt(id));
   const { addToCart, removeFromCart, cartItems = [] } = useCart();
   const [feedback, setFeedback] = useState(null);
 
@@ -64,4 +64,4 @@ const ViewPage = () => {
   );
 };
 
-export default ViewPage;
+export default KidviewPage;

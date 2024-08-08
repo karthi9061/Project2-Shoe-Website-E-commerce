@@ -1,19 +1,25 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Navbar from './component/common/Navbar/Navbar';
-import Footer from './component/common/Footer/Footer';
-import Loader from './component/common/Loader/Loader';
-import Home from './pages/customer/Home';
-import Mens from './pages/customer/Mens';
-import CartPage from './pages/customer/CartPage';
-import FavoritesPage from './pages/customer/FavoritesPage';
+
 import { CartProvider, FavoritesProvider } from './CartProvider'; // Import both providers
-import ViewPage from './pages/customer/ViewPage';
-import Women from './pages/customer/Women';
-import Kids from './pages/customer/Kids';
+
+import Loader2 from './component/common/Loader/Loader2';
+import Home from './pages/customer/Pages/Home';
+import Mens from './pages/customer/Pages/Mens';
+import Women from './pages/customer/Pages/Women';
+import Kids from './pages/customer/Pages/Kids';
+import FavoritesPage from './pages/customer/Pages/FavoritesPage';
+import ViewPage from './pages/customer/View/ViewPage';
+import CartPage from './pages/customer/Pages/CartPage';
+import KidviewPage from './pages/customer/View/KidviewPage';
+import Navbar from './component/common/Navbar/Navbar';
 import Contact from './pages/common/Contact';
 import About from './pages/common/About';
-import Loader2 from './component/common/Loader/Loader2';
+import WomenViewPage from './pages/customer/View/WomenViewPage';
+import Footer from './component/common/Footer/Footer';
+import Profile from './component/common/UserProfile/UserProfile/Profile';
+import LoginSIgn from './component/common/LoginSignup/LoginSIgn';
+
 
 
 const App = () => {
@@ -45,6 +51,11 @@ const App = () => {
               <Route exact path="cart" element={<CartPage />} />
               <Route exact path="favorites" element={<FavoritesPage />} />
               <Route exact path="/shoe/:id" element={<ViewPage />} />
+              <Route exact path="/kshoe/:id" element={<KidviewPage/>} />
+              <Route exact path="/wshoe/:id" element={<WomenViewPage />} />
+              <Route exact path="/wshoe/:id" element={<WomenViewPage />} />
+              <Route exact path="/profile" element={<Profile />} />
+              <Route exact path="/login" element={<LoginSIgn />} />
             </Routes>
             <Footer />
           </Router>

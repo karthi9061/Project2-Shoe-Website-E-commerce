@@ -1,5 +1,5 @@
 import React from 'react';
-import { useFavorites } from '../../CartProvider'; // Ensure the path is correct
+import { useFavorites } from '../../../CartProvider'; // Ensure the path is correct
 
 const FavoritesPage = () => {
   const { favoriteItems, removeFromFavorites } = useFavorites();

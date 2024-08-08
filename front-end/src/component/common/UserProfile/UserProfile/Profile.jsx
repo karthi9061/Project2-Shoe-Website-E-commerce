@@ -1,6 +1,6 @@
 import React from "react";
 import "./Profile.css";
-import avatar from "../../../../assets/avatar.jpg";
+import avatar from "../../../../assets/Images/venki.jpg";
 import Goback from "./Goback";
 import { useNavigate } from "react-router-dom";
 

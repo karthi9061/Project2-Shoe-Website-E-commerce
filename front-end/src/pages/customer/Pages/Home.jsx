@@ -1,10 +1,10 @@
 import React, { Suspense, lazy } from 'react';
 
-const Hero = lazy(() => import('../../component/customer/Hero/Hero'));
-const FeaturedProduct = lazy(() => import('../../component/customer/FeaturedProduct/FeaturedProduct'));
-const ProductCategories = lazy(() => import('../../component/customer/ProductCategories/ProductCategories'));
-const PromoSection = lazy(() => import('../../component/customer/Login-signup/PromoSection'));
-const Carousel = lazy(() => import('../../component/customer/Ourproduct/Carousel'));
+const Hero = lazy(() => import('../../../component/customer/Hero/Hero'));
+const FeaturedProduct = lazy(() => import('../../../component/customer/FeaturedProduct/FeaturedProduct'));
+const ProductCategories = lazy(() => import('../../../component/customer/ProductCategories/ProductCategories'));
+const PromoSection = lazy(() => import('../../../component/customer/Login-signup/PromoSection'));
+const Carousel = lazy(() => import('../../../component/customer/Ourproduct/Carousel'));
 
 const Home = () => {
   return (

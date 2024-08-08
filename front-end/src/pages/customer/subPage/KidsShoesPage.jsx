@@ -1,14 +1,14 @@
 import React, { useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
-import { useCart, useFavorites } from '../../CartProvider';
+import { useCart, useFavorites } from '../../../CartProvider';
 
 
-const WomenShoesPage = ({ shoes, loadMoreShoes }) => {
+const KidsShoesPage = ({ shoes, loadMoreShoes }) => {
   const [loading, setLoading] = useState(false);
   const [feedback, setFeedback] = useState(null);
   const [clickedShoe, setClickedShoe] = useState(null);
   const { addToCart, removeFromCart, cartItems = [] } = useCart();
-  const { addToFavorites, removeFromFavorites, favoriteItems = [] } = useFavorites(); // Default to empty array
+  const { addToFavorites, removeFromFavorites, favoriteItems = [] } = useFavorites(); 
   const observer = useRef();
 
   const lastElementRef = (node) => {
@@ -84,7 +84,7 @@ const WomenShoesPage = ({ shoes, loadMoreShoes }) => {
                     {cartItems.some((item) => item.id === shoe.id) ? 'Remove from Cart' : 'Add to Cart'}
                   </span>
                 </button>
-                <Link to={`/shoe/${shoe.id}`} className="bg-green-500 text-white px-4 py-2 rounded-md transition duration-300 hover:bg-green-600 flex items-center space-x-2">
+                <Link to={`/kshoe/${shoe.id}`} className="bg-green-500 text-white px-4 py-2 rounded-md transition duration-300 hover:bg-green-600 flex items-center space-x-2">
                   <i className="fas fa-eye"></i>
                 </Link>
                 <button
@@ -92,7 +92,7 @@ const WomenShoesPage = ({ shoes, loadMoreShoes }) => {
                     favoriteItems.some((item) => item.id === shoe.id)
                       ? 'bg-red-500 text-white hover:bg-red-600'
                       : 'bg-gray-300 text-gray-700 hover:bg-gray-400'
-                  } ${clickedShoe === shoe.id ? 'pop-out' : ''}`} // Apply pop-out class
+                  } ${clickedShoe === shoe.id ? 'pop-out' : ''}`}
                   onClick={() => handleAddToFavorites(shoe)}
                 >
                   <i
@@ -125,4 +125,4 @@ const WomenShoesPage = ({ shoes, loadMoreShoes }) => {
   );
 };
 
-export default WomenShoesPage;
+export default KidsShoesPage;

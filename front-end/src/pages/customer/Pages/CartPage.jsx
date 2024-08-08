@@ -1,5 +1,5 @@
 import React from 'react';
-import { useCart } from '../../CartProvider';
+import { useCart } from '../../../CartProvider';
 
 const CartPage = () => {
   const { cartItems, removeFromCart } = useCart();

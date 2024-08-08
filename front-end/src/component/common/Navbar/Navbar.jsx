@@ -221,7 +221,7 @@ function Navbar() {
               className="profile-menu"
             >
               <MenuItem onClick={handleCloseProfileMenu}>
-                <Link to="/account" className="profile-menu-item">
+                <Link to="/profile" className="profile-menu-item">
                   Account
                 </Link>
               </MenuItem>
