@@ -1,10 +1,11 @@
 import React from "react";
 import "./Contact.css";
-import svg1 from "../../assets/SVG/1 (1).svg";
-import svg2 from "../../assets/SVG/1 (2).svg";
+import svg1 from "../../assets/SVG/svg1 (1).svg";
+import svg2 from "../../assets/SVG/svg1 (2).svg";
+import Submitbtn from "../../component/common/Button/Submitbtn";
 
 const Contact = () => {
-    const [result, setResult] = React.useState("");
+  const [result, setResult] = React.useState("");
 
   const showMessage = (message) => {
     setResult(message);
@@ -15,6 +16,16 @@ const Contact = () => {
 
   const onSubmit = async (event) => {
     event.preventDefault();
+
+    const name = event.target.name.value.trim();
+    const email = event.target.email.value.trim();
+    const message = event.target.message.value.trim();
+
+    if (!name || !email || !message) {
+      showMessage("Please fill in all fields.");
+      return;
+    }
+
     showMessage("Sending....");
     const formData = new FormData(event.target);
 
@@ -59,6 +70,8 @@ const Contact = () => {
                 our products, pricing, or anything else, our team is ready to
                 answer all your questions.
               </p>
+              <div className="p-5 border border-white rounded-lg">
+
               <form className="space-y-4" onSubmit={onSubmit}>
                 <div>
                   <label
@@ -102,18 +115,17 @@ const Contact = () => {
                     placeholder="Your Message"
                   ></textarea>
                 </div>
-                <button
-                  className="bg-yellow-300 text-gray-900 px-4 py-2 rounded-lg hover:bg-yellow-400 transition duration-300"
-                  type="submit"
-                >
-                  Send Message
+                <button type="submit" className="mt-15">
+                  <Submitbtn/>
                 </button>
               </form>
+
               <span class="block text-center mt-4 text-lg font-semibold text-green-600 border-green-300 rounded-lg p-3">
                 {result}
               </span>
+              </div>
             </div>
-            <div className="md:w-1/2">
+            <div className="md:w-1/2 mt-20">
               <img
                 src={svg2}
                 alt="Customer Service"
@@ -250,7 +262,7 @@ const Contact = () => {
               <img src={svg1} alt="Customer Service" className="mr-12 w-1/4" />
               <iframe
                 className="w-2/4 h-64 rounded-lg shadow-lg"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.2029715967415!2d-122.40641768468145!3d37.78563617975657!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8085818d29c36537%3A0x9c7e2dd13ff9a7a0!2sGoogle%20San%20Francisco!5e0!3m2!1sen!2sus!4v1596720431700!5m2!1sen!2sus"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.8277265502416!2d77.61194987484038!3d12.918791487391724!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae1457a5c6bee5%3A0x1e5e064c9df42422!2sShiva%20PG%20for%20Gents!5e0!3m2!1sen!2sin!4v1723111080947!5m2!1sen!2sin"
                 allowFullScreen=""
                 aria-hidden="false"
                 tabIndex="0"

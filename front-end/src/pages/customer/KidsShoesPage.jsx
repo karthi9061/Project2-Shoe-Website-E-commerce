@@ -8,7 +8,7 @@ const KidsShoesPage = ({ shoes, loadMoreShoes }) => {
   const [feedback, setFeedback] = useState(null);
   const [clickedShoe, setClickedShoe] = useState(null);
   const { addToCart, removeFromCart, cartItems = [] } = useCart();
-  const { addToFavorites, removeFromFavorites, favoriteItems = [] } = useFavorites(); // Default to empty array
+  const { addToFavorites, removeFromFavorites, favoriteItems = [] } = useFavorites(); 
   const observer = useRef();
 
   const lastElementRef = (node) => {
@@ -92,7 +92,7 @@ const KidsShoesPage = ({ shoes, loadMoreShoes }) => {
                     favoriteItems.some((item) => item.id === shoe.id)
                       ? 'bg-red-500 text-white hover:bg-red-600'
                       : 'bg-gray-300 text-gray-700 hover:bg-gray-400'
-                  } ${clickedShoe === shoe.id ? 'pop-out' : ''}`} // Apply pop-out class
+                  } ${clickedShoe === shoe.id ? 'pop-out' : ''}`}
                   onClick={() => handleAddToFavorites(shoe)}
                 >
                   <i

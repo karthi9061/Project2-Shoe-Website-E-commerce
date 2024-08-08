@@ -9,21 +9,21 @@ const Carousel = lazy(() => import('../../component/customer/Ourproduct/Carousel
 const Home = () => {
   return (
     <div className="bg-home-bg bg-cover bg-center bg-fixed min-h-screen">
-      <Suspense fallback={<div>Loading...</div>}>
+      <Suspense fallback={"."}>
         <Hero />
       </Suspense>
       <div className="mt-4">
-        <Suspense fallback={<div>Loading...</div>}>
+        <Suspense fallback={"."}>
           <PromoSection />
         </Suspense>
       </div>
-      <Suspense fallback={<div>Loading...</div>}>
+      <Suspense fallback={"."}>
         <FeaturedProduct />
       </Suspense>
-      <Suspense fallback={<div>Loading...</div>}>
+      <Suspense fallback={"."}>
         <ProductCategories />
       </Suspense>
-      <Suspense fallback={<div>Loading...</div>}>
+      <Suspense fallback={"."}>
         <Carousel />
       </Suspense>
     </div>

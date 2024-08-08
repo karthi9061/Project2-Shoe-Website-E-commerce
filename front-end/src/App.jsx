@@ -13,6 +13,7 @@ import Women from './pages/customer/Women';
 import Kids from './pages/customer/Kids';
 import Contact from './pages/common/Contact';
 import About from './pages/common/About';
+import Loader2 from './component/common/Loader/Loader2';
 
 
 const App = () => {
@@ -30,7 +31,7 @@ const App = () => {
     <CartProvider>
       <FavoritesProvider>
         {loading ? (
-          <Loader />
+          <Loader2/>
         ) : (
           <Router>
             <Navbar />
