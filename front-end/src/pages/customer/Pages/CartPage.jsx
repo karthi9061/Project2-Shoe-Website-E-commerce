@@ -1,8 +1,15 @@
 import React from 'react';
 import { useCart } from '../../../CartProvider';
+import { useNavigate } from 'react-router-dom';
 
 const CartPage = () => {
   const { cartItems, removeFromCart } = useCart();
+  const navigate = useNavigate();
+
+  const handleCheckout = (item = null) => {
+    // If item is passed, purchase single item; else purchase all items
+    navigate('/fcheckout', { state: { item, allItems: !item } });
+  };
 
   return (
     <div className="p-6">
@@ -20,11 +27,26 @@ const CartPage = () => {
               >
                 Remove from Cart
               </button>
+              <button
+                className="bg-blue-500 text-white px-4 py-2 rounded-md mt-4 ml-4"
+                onClick={() => handleCheckout(item)}
+              >
+                Buy This Item
+              </button>
             </div>
           </div>
         ))}
       </div>
+      {cartItems.length > 0 && (
+        <button
+          className="bg-green-500 text-white px-6 py-3 rounded-md mt-6"
+          onClick={() => handleCheckout()}
+        >
+          Buy All Items
+        </button>
+      )}
     </div>
   );
 };
+
 export default CartPage;
