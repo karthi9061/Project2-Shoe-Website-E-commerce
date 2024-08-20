@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 import "./Contact.css";
 import svg1 from "../../assets/SVG/svg1 (1).svg";
 import svg2 from "../../assets/SVG/svg1 (2).svg";
@@ -6,6 +8,10 @@ import Submitbtn from "../../component/common/Button/Submitbtn";
 
 const Contact = () => {
   const [result, setResult] = React.useState("");
+
+  useEffect(() => {
+    AOS.init({ duration: 1200 });
+  }, []);
 
   const showMessage = (message) => {
     setResult(message);
@@ -46,10 +52,11 @@ const Contact = () => {
       showMessage(data.message);
     }
   };
+
   return (
     <div className="bg-gray-900 text-gray-200 py-16">
       <div className="max-w-7xl mx-auto px-4">
-        <div className="flex justify-center items-center mb-10 fade-in-up">
+        <div className="flex justify-center items-center mb-10" data-aos="fade-up">
           <span className="text-3xl font-zilla text-center mr-4 text-yellow-300">
             Contact{" "}
           </span>
@@ -57,10 +64,7 @@ const Contact = () => {
         </div>
 
         <div className="space-y-12">
-          <div
-            className="flex flex-col md:flex-row md:space-x-8 fade-in-up"
-            style={{ animationDelay: "0.1s" }}
-          >
+          <div className="flex flex-col md:flex-row md:space-x-8" data-aos="fade-up" data-aos-delay="100">
             <div className="md:w-1/2 space-y-4">
               <h3 className="text-3xl font-bold text-yellow-300 font-ceviche">
                 Get in Touch
@@ -71,61 +75,60 @@ const Contact = () => {
                 answer all your questions.
               </p>
               <div className="p-5 border border-white rounded-lg">
+                <form className="space-y-4" onSubmit={onSubmit}>
+                  <div>
+                    <label
+                      className="block text-sm font-bold mb-2"
+                      htmlFor="name"
+                    >
+                      Name
+                    </label>
+                    <input
+                      className="w-full px-3 py-2 text-gray-900 rounded-lg"
+                      type="text"
+                      id="name"
+                      placeholder="Your Name"
+                    />
+                  </div>
+                  <div>
+                    <label
+                      className="block text-sm font-bold mb-2"
+                      htmlFor="email"
+                    >
+                      Email
+                    </label>
+                    <input
+                      className="w-full px-3 py-2 text-gray-900 rounded-lg"
+                      type="email"
+                      id="email"
+                      placeholder="Your Email"
+                    />
+                  </div>
+                  <div>
+                    <label
+                      className="block text-sm font-bold mb-2"
+                      htmlFor="message"
+                    >
+                      Message
+                    </label>
+                    <textarea
+                      className="w-full px-3 py-2 text-gray-900 rounded-lg"
+                      id="message"
+                      rows="4"
+                      placeholder="Your Message"
+                    ></textarea>
+                  </div>
+                  <button type="submit" className="mt-15">
+                    <Submitbtn />
+                  </button>
+                </form>
 
-              <form className="space-y-4" onSubmit={onSubmit}>
-                <div>
-                  <label
-                    className="block text-sm font-bold mb-2"
-                    htmlFor="name"
-                  >
-                    Name
-                  </label>
-                  <input
-                    className="w-full px-3 py-2 text-gray-900 rounded-lg"
-                    type="text"
-                    id="name"
-                    placeholder="Your Name"
-                  />
-                </div>
-                <div>
-                  <label
-                    className="block text-sm font-bold mb-2"
-                    htmlFor="email"
-                  >
-                    Email
-                  </label>
-                  <input
-                    className="w-full px-3 py-2 text-gray-900 rounded-lg"
-                    type="email"
-                    id="email"
-                    placeholder="Your Email"
-                  />
-                </div>
-                <div>
-                  <label
-                    className="block text-sm font-bold mb-2"
-                    htmlFor="message"
-                  >
-                    Message
-                  </label>
-                  <textarea
-                    className="w-full px-3 py-2 text-gray-900 rounded-lg"
-                    id="message"
-                    rows="4"
-                    placeholder="Your Message"
-                  ></textarea>
-                </div>
-                <button type="submit" className="mt-15">
-                  <Submitbtn/>
-                </button>
-              </form>
-
-              <span class="block text-center mt-4 text-lg font-semibold text-green-600 border-green-300 rounded-lg p-3">
-                {result}
-              </span>
+                <span className="block text-center mt-4 text-lg font-semibold text-green-600 border-green-300 rounded-lg p-3">
+                  {result}
+                </span>
               </div>
             </div>
-            <div className="md:w-1/2 mt-20">
+            <div className="md:w-1/2 mt-20" data-aos="fade-up" data-aos-delay="200">
               <img
                 src={svg2}
                 alt="Customer Service"
@@ -134,10 +137,7 @@ const Contact = () => {
             </div>
           </div>
 
-          <div
-            className="space-y-4 fade-in-up"
-            style={{ animationDelay: "0.2s" }}
-          >
+          <div data-aos="fade-up" data-aos-delay="200">
             <h3 className="text-3xl font-ceviche text-yellow-300 text-center">
               Frequently Asked Questions
             </h3>
@@ -176,10 +176,7 @@ const Contact = () => {
             </div>
           </div>
 
-          <div
-            className="space-y-4 fade-in-up"
-            style={{ animationDelay: "0.3s" }}
-          >
+          <div data-aos="fade-up" data-aos-delay="300">
             <h3 className="text-3xl font-ceviche text-yellow-300 text-center">
               Subscribe to Our Newsletter
             </h3>
@@ -212,10 +209,7 @@ const Contact = () => {
             </form>
           </div>
 
-          <div
-            className="space-y-4 fade-in-up"
-            style={{ animationDelay: "0.4s" }}
-          >
+          <div data-aos="fade-up" data-aos-delay="400">
             <h3 className="text-3xl font-ceviche text-yellow-300 text-center">
               Customer Testimonials
             </h3>
@@ -246,10 +240,7 @@ const Contact = () => {
             </div>
           </div>
 
-          <div
-            className="space-y-4 fade-in-up flex flex-col items-center"
-            style={{ animationDelay: "0.5s" }}
-          >
+          <div data-aos="fade-up" data-aos-delay="500" className="flex flex-col items-center">
             <h3 className="text-3xl font-ceviche text-yellow-300 text-center">
               Our Location
             </h3>
