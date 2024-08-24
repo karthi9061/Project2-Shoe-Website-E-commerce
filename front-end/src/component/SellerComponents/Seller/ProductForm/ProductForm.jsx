@@ -1,11 +1,10 @@
 import React, { useState } from "react";
 import "./ProductForm.css";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
+
 const ProductForm = () => {
   const goto = useNavigate();
-  const handlePressBack = () => {
-    goto("/");
-  };
 
   const initialForm = {
     name: "",
@@ -20,25 +19,48 @@ const ProductForm = () => {
   const [selectedImage, setSelectedImage] = useState(null);
   const [imageUrl, setImageUrl] = useState("");
 
+  const handlePressBack = () => {
+    goto("/");
+  };
+
   const handleChange = (event) => {
     const { name, value } = event.target;
-    setFromData({ ...Formdata, [name]: value });
-    if (name == "color") {
+    if (name === "color" || name === "size") {
       setFromData({ ...Formdata, [name]: value.split(",") });
-    } else if (name == "image") {
+    } else if (name === "image") {
       setSelectedImage(event.target.files[0]);
       setImageUrl(URL.createObjectURL(event.target.files[0]));
-    } else if (name == "size") {
-      setFromData({ ...Formdata, [name]: value.split(",") });
+    } else {
+      setFromData({ ...Formdata, [name]: value });
     }
   };
 
-  const handleSumbit = (event) => {
+  const handleSumbit = async (event) => {
     event.preventDefault();
-    console.log(Formdata);
-    setFromData(initialForm);
-    setImageUrl(null);
+
+    const formData = new FormData();
+    formData.append("name", Formdata.name);
+    formData.append("description", Formdata.description);
+    formData.append("price", Formdata.price);
+    formData.append("category", Formdata.category);
+    formData.append("size", Formdata.size);
+    formData.append("color", Formdata.color);
+    formData.append("image", selectedImage);
+
+    try {
+      const response = await axios.post("http://localhost:8080/api/products", formData, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      });
+      console.log("Product saved successfully:", response.data);
+      setFromData(initialForm);
+      setImageUrl(null);
+    } catch (error) {
+      console.error("Error saving product:", error);
+    }
   };
+
   return (
     <div className="addproductcontainer">
       <div className="card">
@@ -121,12 +143,12 @@ const ProductForm = () => {
               type="file"
               id="productImages"
               name="image"
-              value={Formdata.image}
               onChange={handleChange}
-              multiple
               required
             />
-            <img src={imageUrl} style={{ maxHeight: 300, maxwidth: 500 }} />{" "}
+            {imageUrl && (
+              <img src={imageUrl} alt="Product Preview" style={{ maxHeight: 300, maxWidth: 500 }} />
+            )}
             <br />
             <button type="submit">Save Product</button>
           </form>

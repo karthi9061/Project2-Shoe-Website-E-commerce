@@ -6,6 +6,7 @@ import ProductForm from '../component/SellerComponents/Seller/ProductForm/Produc
 import About from '../Customer/common/About'
 import Navbar from '../component/SellerComponents/Navbar/Navbar'
 import Footer from '../component/common/Footer/Footer'
+import ProductEditForm from '../component/SellerComponents/Seller/ProductForm/ProductEditForm'
 
 
 const Seller = () => {
@@ -17,6 +18,7 @@ const Seller = () => {
       <Route path="/" element={<Home />} />
       <Route path='product' element={<ProductManagement/>}/>
       <Route path='productFrom' element={<ProductForm/> }/>
+      <Route path="/products/edit/:id" element={<ProductEditForm />} />
       <Route path='about' element={<About/> }/>
       
     </Routes>
