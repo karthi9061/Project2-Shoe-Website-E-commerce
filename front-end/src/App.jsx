@@ -5,8 +5,8 @@ import Seller from './Seller/Seller'
 const App = () => {
   return (
     <div>
-        <Seller/>
-        {/* <Customer/> */}
+        {/* <Seller/> */}
+        <Customer/>
     </div>
   )
 }

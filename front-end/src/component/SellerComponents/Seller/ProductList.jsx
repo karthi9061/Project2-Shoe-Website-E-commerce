@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 const ProductList = () => {
   const [products, setProducts] = useState([]);
   const [error, setError] = useState(null);
-  const navigate=useNavigate();
+  const navigate = useNavigate();
 
   useEffect(() => {
     fetchProducts();
@@ -32,45 +32,41 @@ const ProductList = () => {
   };
 
   return (
-    <div className="p-4">
-      <h2 className="text-2xl font-bold mb-4">Product List</h2>
+    <div className="p-6 bg-gray-50">
+      <h2 className="text-3xl font-semibold text-gray-800 mb-6">Product List</h2>
       {error && <div className="text-red-500 mb-4">{error}</div>}
-      <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-3">
+      <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3">
         {products.map((product) => (
           <div
             key={product.id}
-            className="bg-white shadow-md rounded-lg overflow-hidden"
+            className="bg-white p-5 rounded-lg border border-gray-200 shadow-sm hover:shadow-md transition-shadow duration-300"
           >
-            <img
-              src={`http://localhost:8080${product.imagePath}`}
-              alt={product.name}
-              className="w-full h-48 object-cover"
-            />
-            <div className="p-4">
-              <h3 className="text-lg font-semibold">{product.name}</h3>
-              <p className="text-gray-600 mt-1">{product.description}</p>
-              <p className="text-gray-800 font-semibold mt-2">
-                Price: ${product.price}
-              </p>
-              <p className="text-gray-600">Category: {product.category}</p>
-              <p className="text-gray-600">Sizes: {product.size.join(", ")}</p>
-              <p className="text-gray-600">
-                Colors: {product.color.join(", ")}
-              </p>
-              <div className="mt-4 flex gap-2">
-                <button
-                  onClick={() => handleDelete(product.id)}
-                  className="bg-red-500 text-white py-2 px-4 rounded hover:bg-red-600"
-                >
-                  Delete
-                </button>
-                <button
-                  onClick={() => navigate(`/products/edit/${product.id}`)}
-                  className="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600"
-                >
-                  Edit
-                </button>
-              </div>
+            <div className="w-full h-48 overflow-hidden rounded-md mb-4">
+              <img
+                src={`http://localhost:8080${product.imagePath}`}
+                alt={product.name}
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <h3 className="text-lg font-semibold font-sans text-gray-900 mb-2">{product.name}</h3>
+            <p className="text-sm font-light font-sans text-gray-600 mb-2">{product.category || "Category"}</p>
+            <p className="text-base font-medium font-sans text-gray-800 mb-2">$ {product.price}</p>
+            <p className="text-sm font-light font-sans text-gray-600 mb-2">Sizes: {product.size.join(", ")}</p>
+            <p className="text-sm font-light font-sans text-gray-600 mb-4">Colors: {product.color.join(", ")}</p>
+
+            <div className="flex gap-3">
+              <button
+                onClick={() => handleDelete(product.id)}
+                className="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600 transition-colors duration-300"
+              >
+                Delete
+              </button>
+              <button
+                onClick={() => navigate(`/products/edit/${product.id}`)}
+                className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition-colors duration-300"
+              >
+                Edit
+              </button>
             </div>
           </div>
         ))}

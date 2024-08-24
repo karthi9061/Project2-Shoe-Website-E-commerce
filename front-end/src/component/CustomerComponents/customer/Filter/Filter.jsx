@@ -45,6 +45,7 @@ const Filter = ({ onFilter, onRemoveFilter, onShowAll }) => {
       <button
         className="md:hidden bg-gradient-to-r from-indigo-500 to-purple-600 text-white px-4 py-2 rounded-lg hover:from-indigo-600 hover:to-purple-700 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-opacity-50 transition duration-200 ease-in-out w-full mb-2"
         onClick={toggleFilter}
+        aria-label={isOpen ? 'Close Filters' : 'Open Filters'}
       >
         {isOpen ? 'Close Filters' : 'Open Filters'}
       </button>
