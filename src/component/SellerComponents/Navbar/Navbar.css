@@ -1,0 +1,61 @@
+/* Navbar.css */
+
+.navbar {
+  background-color: #ffffff !important;
+}
+
+.menu-button {
+  color: rgb(0, 0, 0) !important;
+}
+
+.menu-item {
+  color: #a6a1a1 !important;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.menu-item:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+  color: rgb(0, 0, 0) !important;
+}
+
+.nav-button {
+  color: rgba(81, 81, 81, 0.873) !important;
+  transition: color 0.3s ease, transform 0.3s ease; 
+  background-color: transparent !important;
+  text-transform: none !important; 
+  font-weight: 400 !important; 
+}
+
+.nav-button:hover {
+  color: rgb(0, 0, 0) !important;
+  transform: scale(1.1); 
+}
+
+.nav-button.active-nav-button {
+  color: rgb(0, 0, 0) !important;
+  font-weight: bold !important;
+  border-bottom: 2px solid black; 
+  transform: none !important;
+}
+
+.logo {
+  height: 50px !important;
+  display: block;
+  margin: 0 auto; 
+}
+
+.navbar-text {
+  color: rgb(2, 2, 2) !important;
+  font-weight: bold !important;
+  margin-left: 10px !important;
+  font-family: "Freckle Face", system-ui !important;
+  font-weight: 400;
+  font-style: normal;
+  text-decoration: none;
+}
+
+.login-button {
+  color: rgb(0, 0, 0) !important;
+  font-weight: bold !important;
+  margin-right: 16px !important;
+}

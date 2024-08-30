@@ -1,0 +1,88 @@
+/* Keyframe for slide-down animation */
+@keyframes slideDown {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Navbar styles */
+.navbar {
+  background-color: #ffffff !important;
+  animation: slideDown 0.5s ease-out; 
+}
+
+/* Menu button styles */
+.menu-button {
+  color: rgb(0, 0, 0) !important;
+}
+
+/* Styles for menu items */
+.menu-item {
+  color: #a6a1a1 !important;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.menu-item:hover {
+  color: rgb(0, 0, 0) !important; 
+}
+
+
+
+/* Styles for navigation buttons */
+.nav-button {
+  color: rgba(81, 81, 81, 0.873) !important;
+  transition: color 0.3s ease, transform 0.3s ease; 
+}
+
+
+
+/* Navigation button hover effect */
+.nav-button:hover {
+  color: rgb(0, 0, 0) !important;
+  background-color: transparent !important;
+  transform: scale(1.1);
+}
+.nav-button.active-nav-button {
+  color: rgb(0, 0, 0) !important;
+  background-color: transparent !important;
+  transform: scale(1.1);  border-bottom: 2px solid #000000;
+}
+/* Logo styles */
+.logo {
+  height: 50px !important;
+}
+
+/* Navbar text styles */
+.navbar-text {
+  color: rgb(2, 2, 2) !important;
+  font-weight: bold !important;
+  margin-left: 10px !important;
+  font-family: "Freckle Face", system-ui !important;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* Search bar styles */
+.search {
+  margin-left: auto !important;
+  border: #000 solid 1px;
+  border-radius: 30px;
+}
+
+.search .MuiInputBase-input {
+  color: rgb(0, 0, 0) !important;
+}
+
+.search .MuiSvgIcon-root {
+  color: rgb(0, 0, 0) !important;
+}
+
+/* icon */
+.icon-button {
+  color: rgb(0, 0, 0) !important;
+}
